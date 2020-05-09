@@ -80,7 +80,9 @@ def parse_hostport(rhostport):
     and returns a tuple (username, password, port, host)
     """
     # default port for SSH is TCP port 22
-    port = 22
+    #port = 22
+    # unfortunately, this fails for hosts configured in ssh_config :/
+    # as shuttle tries to set the port defined here, so by default it should not use a port
     username = None
     password = None
     host = rhostport
